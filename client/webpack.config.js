@@ -25,8 +25,14 @@ module.exports = () => {
         template: './index.html',
         title: 'Just Another Text Editor'
       }),
+      //Inject our custom service worker
+      new InjectManifest({
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
+      }),
     ],
     module: {
+      //CSS loaders
       rules: [
         {
         test: /\.css$/i,
