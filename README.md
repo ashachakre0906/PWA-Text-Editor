@@ -1,14 +1,17 @@
 # PWA-Text-Editor
-The app will be a single-page application that meets the PWA criteria. Additionally, it will feature a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser. The application will also function offline.
+The app will be a single-page application that meets the PWA criteria. PWAS use the Service Workerand Cache API's to cache assets and API responses, ensuring that the aplication will still continue to work without an internet connection.Service workers
+can be used to cache static CSS,Javascript,HTML files, images and even API requests.
+We will use webpack and workbox.Workbox is a google library that makes it much easier to set up teh service worker.With webpack, we can deliver applications with optimizede code called bundles.it also allows to implement CSS loaders to make CSS files more modular.
+
 ## User Story
-```
+```md
 AS A developer
 I WANT to create notes or code snippets with or without an internet connection
 SO THAT I can reliably retrieve them for later use
 ```
 
 ## Acceptance Criteria
-```
+```md
 GIVEN a text editor web application
 WHEN I open my application in my editor
 THEN I should see a client server folder structure
