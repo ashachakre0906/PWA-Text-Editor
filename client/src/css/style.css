@@ -19,7 +19,9 @@ body {
 h1 {
   font-size: 22px;
 }
+.hidden{
 
+}
 #navbar {
   height: var(--navbar-height);
   background-color: var(--primary);

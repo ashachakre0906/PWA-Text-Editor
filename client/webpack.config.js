@@ -83,6 +83,7 @@ const { InjectManifest } = require("workbox-webpack-plugin");
 module.exports = () => {
   return {
     mode: "development",
+    watch: (process.argv.indexOf('--watch') > -1),
     entry: {
       main: "./src/js/index.js",
       install: "./src/js/install.js",
