@@ -18,6 +18,8 @@ module.exports = () => {
       path: path.resolve(__dirname, "dist"),
     },
     devServer: {
+    // The `hot` option is to use the webpack-dev-server in combination with the hot module replacement API.
+    //Hot Module Replacement (HMR) to update the page without a full page refresh.
       hot: 'only',
       liveReload: false,
     },
@@ -51,6 +53,7 @@ module.exports = () => {
         ],
       }),
     ],
+    //Added a new set of rules to handle images
     module: {
       rules: [
         {
@@ -63,7 +66,7 @@ module.exports = () => {
         },
         {
           test: /\.m?js$/,
-          exclude: /node_modules/,
+          exclude: /(node_modules|bower_components)/,
           //We use babel loadder in order to use ES6
           use: {
             loader: "babel-loader",
