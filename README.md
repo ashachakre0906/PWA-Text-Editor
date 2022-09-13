@@ -57,9 +57,9 @@ THEN I should have proper build scripts for a webpack application
 ```
 
 ## Application Demo
+- The following animation demonstrates the application functionality:
 ![Live Demo](/client/src/images/PWA-Text-Editor.gif)
 
-- The following animation demonstrates the application functionality:
 [Screencastify Link](https://watch.screencastify.com/v/0aFqEyzl3Pt23scLBdth)
 
 - The following image shows the application's manifest.json file:
