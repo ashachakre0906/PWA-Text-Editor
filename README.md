@@ -86,8 +86,9 @@ export const getDb = async () => {
 };
 initdb();
 ```
+***This configuration object needs to be in webpack.config.js which will create a manifest.json file***
+
 ```js
-//This configuration object needs to be in webpack.config.js which will create a manifest.json file .
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
