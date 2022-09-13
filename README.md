@@ -1,23 +1,23 @@
-# Description
+## Description
 The app will be a single-page application that meets the PWA criteria. PWAS use the Service Worker and Cache API's to cache assets and API responses, ensuring that the aplication will still continue to work without an internet connection.Service workers
 can be used to cache static CSS,Javascript,HTML files, images and even API requests.
 We will use webpack and workbox.Workbox is a google library that makes it much easier to set up the service worker.With webpack, we can deliver applications with optimized code called bundles.it also allows to implement CSS loaders to make CSS files more modular.This application should also function offline.
 
-## [Solution URL](https://github.com/ashachakre0906/social-network-api)
-## [Deploy URL](https://asha-pwa-text-editor.herokuapp.com/)
+### [Solution URL](https://github.com/ashachakre0906/PWA-Text-Editor)
+### [Deploy URL](https://asha-pwa-text-editor.herokuapp.com/)
 
 ## Table of Contents
 - [Description](#description)
   - [Solution URL](#solution-url)
   - [Deploy URL](#deploy-url)
-  - [Table of Contents](#table-of-contents)
-  - [User Story](#user-story)
-  - [Acceptance Criteria](#acceptance-criteria)
-  - [Application Demo](#application-demo)
-  - [Code Examples](#code-examples)
-  - [Technologies Used](#technologies-used)
-  - [Credits](#credits)
-  - [Questions](#questions)
+- [Table of Contents](#table-of-contents)
+- [User Story](#user-story)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Application Demo](#application-demo)
+- [Code Examples](#code-examples)
+- [Technologies Used](#technologies-used)
+- [Credits](#credits)
+- [Questions](#questions)
 
 
 ## User Story
@@ -85,6 +85,27 @@ export const getDb = async () => {
   console.log("get data from the database", result);
 };
 initdb();
+```
+```js
+//This configuration object needs to be in webpack.config.js which will create a manifest.json file .
+      new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
+        name: "Just another text editor",
+        short_name: "JATE",
+        description: "Just another text editor!",
+        background_color: "#225ca3",
+        theme_color: "#225ca3",
+        start_url: "/",
+        publicPath: "/",
+        icons: [
+          {
+            src: path.resolve("src/images/logo.png"),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join("assets", "icons"),
+          },
+        ],
+      }),
 ```
 
 ## Technologies Used
