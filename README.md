@@ -1,7 +1,24 @@
-# PWA-Text-Editor
-The app will be a single-page application that meets the PWA criteria. PWAS use the Service Workerand Cache API's to cache assets and API responses, ensuring that the aplication will still continue to work without an internet connection.Service workers
+# Description
+The app will be a single-page application that meets the PWA criteria. PWAS use the Service Worker and Cache API's to cache assets and API responses, ensuring that the aplication will still continue to work without an internet connection.Service workers
 can be used to cache static CSS,Javascript,HTML files, images and even API requests.
-We will use webpack and workbox.Workbox is a google library that makes it much easier to set up teh service worker.With webpack, we can deliver applications with optimizede code called bundles.it also allows to implement CSS loaders to make CSS files more modular.
+We will use webpack and workbox.Workbox is a google library that makes it much easier to set up the service worker.With webpack, we can deliver applications with optimized code called bundles.it also allows to implement CSS loaders to make CSS files more modular.This application should also function offline.
+
+## [Solution URL](https://github.com/ashachakre0906/social-network-api)
+## [Deploy URL](https://asha-pwa-text-editor.herokuapp.com/)
+
+## Table of Contents
+- [Description](#description)
+  - [Solution URL](#solution-url)
+  - [Deploy URL](#deploy-url)
+  - [Table of Contents](#table-of-contents)
+  - [User Story](#user-story)
+  - [Acceptance Criteria](#acceptance-criteria)
+  - [Application Demo](#application-demo)
+  - [Code Examples](#code-examples)
+  - [Technologies Used](#technologies-used)
+  - [Credits](#credits)
+  - [Questions](#questions)
+
 
 ## User Story
 ```md
@@ -39,3 +56,49 @@ WHEN I deploy to Heroku
 THEN I should have proper build scripts for a webpack application
 ```
 
+## Application Demo
+![Live Demo](/client/src/images/PWA-Text-Editor.gif)
+
+- The following animation demonstrates the application functionality:
+[Screencastify Link](https://watch.screencastify.com/v/0aFqEyzl3Pt23scLBdth)
+
+- The following image shows the application's manifest.json file:
+<img src="./client/src/images/manifest.json.png">
+
+- The following image shows the application's registered service worker:
+<img src="./client/src/images/service-worker.png">
+
+- The following image shows the applications indexedDB storage:
+<img src="./client/src/images/indexdb.png">
+
+
+## Code Examples
+***getAll() method will get all the contents from the indexDb database***
+
+```js
+export const getDb = async () => {
+  const JateDB = await openDB("jate", 1);
+  const tx = JateDB.transaction("jate", "readonly");
+  const store = tx.objectStore("jate");
+  const request = store.getAll();
+  const result = await request;
+  console.log("get data from the database", result);
+};
+initdb();
+```
+
+## Technologies Used
+![Javascript Badge](https://img.shields.io/badge/language-Javascript-blue.svg)
+![Express Badge](https://img.shields.io/badge/backend-Express-yellow.svg)
+![Node Badge](https://img.shields.io/badge/backend-Node-orange.svg)
+![IndexDB Badge](https://img.shields.io/badge/Database-IndexDB-magenta.svg)
+![Deployment Badge](https://img.shields.io/badge/Deployment-Heroku-green.svg)
+
+## Credits
+Thank you all TA's and my classmate Nolan Spence for helping with heroku deployment, caching images and screen flashing issues occuring due to webpack-dev-server.
+
+
+## Questions
+Please reach out to me:<br>
+Email Address: chourpagar.asha@gmail.com <br>
+Github Repo URL:[GitHub](https://github.com/ashachakre0906)

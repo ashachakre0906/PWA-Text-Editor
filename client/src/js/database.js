@@ -26,12 +26,12 @@ export const putDb = async (content) => {
   // Open up the desired object store
     const store = tx.objectStore("jate");
   //The put() method of the IDBObjectStore interface updates a given record in a database, or inserts a new record if the given item does not already exist.
-    const request = store.put({jate:content});
+    const request = store.put({'content': content});
   //Get confirmation of the request
     const result = await request;
     console.log("Await my request and save data to DB", result);
 
-};
+}
 
 // TODO: Add logic for a method that gets all the content from the database
 export const getDb = async () => {
@@ -45,7 +45,7 @@ export const getDb = async () => {
   const request = store.getAll();
 // Get confirmation of the request
   const result = await request;
-  console.log("Get All the contents", result);
+  console.log("get data from the database", result);
 };
 // Start the database
 
