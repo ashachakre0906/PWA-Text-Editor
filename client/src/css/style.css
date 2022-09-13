@@ -15,13 +15,14 @@ body {
     Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
+.hidden {
+  display: none;
+}
 
 h1 {
   font-size: 22px;
 }
-.hidden{
 
-}
 #navbar {
   height: var(--navbar-height);
   background-color: var(--primary);
